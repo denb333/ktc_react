@@ -1,0 +1,48 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  height: 46px;
+  padding: 0 14px;
+  border-radius: 14px;
+  background: #fff;
+  column-gap: 10px;
+  font-size: 15px;
+}
+
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+ 
+}
+
+.leftIcon {
+  flex-shrink: 0;
+}
+
+.rightIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 40%;
+  flex-shrink: 0;
+
+}
+.container {
+  min-height: 100vh;
+  background-color: #e5eaef;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 40px 0;
+}
+
+

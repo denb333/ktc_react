@@ -1,0 +1,65 @@
+/* ====== RESET NHẸ & CẤU HÌNH CHUNG ======= */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Montserrat",sans-serif;background:#fafafa;color:#333}
+
+/* khung resume */
+.resume{background:#fff;width:850px}   /* có thể set 100% -> A4 */
+
+/* ===== HEADER BAR (đoạn đen nhỏ) ===== */
+.header-bar{background:#000;height:60px;position:relative}
+.header-bar__text{
+  color:#fff;font-weight:600;letter-spacing:1px;
+  position:absolute;left:40px;top:50%;transform:translateY(-50%);
+}
+
+/* ===== CỘT TRÁI ===== */
+.left-col{width:230px;background:#000;color:#fff}
+.avatar{width:100%;height:auto;display:block}
+.left-col p{margin:.5rem 0;font-size:.9rem}
+.left-col .label{opacity:.8}
+.sec-title{font-size:1.1rem;margin:1.1rem 0 .6rem;letter-spacing:1px}
+.hobbies{list-style:"★ ";padding-left:1.1rem;font-size:.9rem}
+.hobbies li{margin:.3rem 0}
+
+/* ===== CỘT PHẢI ===== */
+.right-col{background:#fff;min-height:100%}
+.name-block .fullname{
+  font-size:3rem;letter-spacing:.6rem;color:#a5a5a5;font-weight:300
+}
+.name-block .position{
+  letter-spacing:2px;color:#9b9b9b;font-style:italic
+}
+
+.sec-heading{
+  font-size:1.3rem;letter-spacing:3px;
+  color:#9b9b9b;margin:1.8rem 0 .8rem;font-weight:600
+}
+
+/* trải kinh nghiệm & education */
+.job{display:flex;gap:20px}
+.job .year{width:80px;font-weight:600}
+.job .details h5{
+  font-weight:700;letter-spacing:1px;font-size:.95rem;
+}
+.job .details h5 small{
+  display:block;font-weight:600;letter-spacing:1px;
+  font-style:italic;color:#9b9b9b
+}
+.job p{font-size:.85rem;margin-top:.25rem}
+
+/* ===== PHẦN SKILL BAR ===== */
+.skill{display:flex;align-items:center;gap:20px;margin:.4rem 0}
+.skill span{width:140px;font-size:.85rem}
+.skill .bar{
+  flex:1;height:8px;background:#d9d9d9;position:relative
+}
+.skill .bar div{
+  height:100%;background:#000
+}
+
+/* responsive nhẹ */
+@media(max-width:900px){
+  .resume{width:100%}
+  .left-col{width:200px}
+  .name-block .fullname{font-size:2.2rem;letter-spacing:.4rem}
+}

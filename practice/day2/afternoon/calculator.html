@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Máy tính đơn giản</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="bg-white p-6 rounded-xl shadow-lg w-80">
+        <!-- Màn hình hiển thị -->
+        <div id="display" class="bg-gray-200 text-right text-3xl p-3 rounded mb-4 overflow-x-auto">
+            0
+        </div>
+
+        
+        <div class="grid grid-cols-4 gap-3">
+            <button class="btn-op col-span-2 bg-red-500">AC</button>
+            <button class="btn-op">÷</button>
+            <button class="btn-op">×</button>
+
+            <button class="btn-num">7</button>
+            <button class="btn-num">8</button>
+            <button class="btn-num">9</button>
+            <button class="btn-op">−</button>
+
+            <button class="btn-num">4</button>
+            <button class="btn-num">5</button>
+            <button class="btn-num">6</button>
+            <button class="btn-op">+</button>
+
+            <button class="btn-num">1</button>
+            <button class="btn-num">2</button>
+            <button class="btn-num">3</button>
+            <button class="row-span-2 btn-equal bg-indigo-500">=</button>
+
+            <button class="col-span-2 btn-num">0</button>
+            <button class="btn-num">.</button>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById("display");
+        let expression = "";
+
+        // Thêm style Tailwind cho tất cả nút
+        document.querySelectorAll(".btn-num, .btn-op, .btn-equal").forEach(btn => {
+            btn.classList.add(
+                "py-3", "rounded", "text-white", "text-xl", "font-semibold",
+                "active:scale-95", "transition", "select-none"
+            );
+            if (!btn.classList.contains("bg-red-500") &&
+                !btn.classList.contains("bg-indigo-500")) {
+                btn.classList.add("bg-indigo-400");
+            }
+        });
+
+        // Thêm số và dấu chấm
+        document.querySelectorAll(".btn-num").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const char = btn.textContent;
+                if (expression === "0") expression = "";
+                expression += char;
+                updateDisplay();
+            });
+        });
+
+        // Xử lý phép toán và nút AC
+        document.querySelectorAll(".btn-op").forEach(btn => {
+            const op = btn.textContent.trim();
+            if (op === "AC") {
+                btn.addEventListener("click", () => {
+                    expression = "";
+                    updateDisplay("0");
+                });
+            } else {
+                btn.addEventListener("click", () => {
+                    const map = { "×": "*", "÷": "/", "−": "-" };
+                    const opToAdd = map[op] || op;
+
+                    // Tránh thêm toán tử liên tiếp
+                    if (/[+\-*/.]$/.test(expression)) return;
+                    if (expression === "") return;
+
+                    expression += opToAdd;
+                    updateDisplay(expression.replace(/[*]/g, "×").replace(/[\/]/g, "÷").replace(/-/g, "−"));
+                });
+            }
+        });
+
+        // Tính toán
+        document.querySelector(".btn-equal").addEventListener("click", () => {
+            try {
+                if (!expression || /[+\-*/.]$/.test(expression)) return;
+                const result = eval(expression);
+                expression = result.toString();
+                updateDisplay();
+            } catch {
+                updateDisplay("Lỗi");
+                expression = "";
+            }
+        });
+
+        // Cập nhật màn hình
+        function updateDisplay(text) {
+            if (text !== undefined && text !== null) {
+                display.textContent = text;
+            } else if (expression) {
+                display.textContent = expression;
+            } else {
+                display.textContent = "0";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

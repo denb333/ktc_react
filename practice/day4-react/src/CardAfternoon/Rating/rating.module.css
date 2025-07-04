@@ -1,0 +1,25 @@
+.rating-start{
+    font-size: 30px;
+    cursor: pointer;
+    color: gray;
+    height: 100px;
+    width: 100px;
+}
+.container {
+    width: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.rating {
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+.rating--bad  { background: #f44336; }   
+.rating--avg  { background: #ff9800; }   
+.rating--good { background: #4caf50; }   
+.rating--none { background: #9e9e9e; } 

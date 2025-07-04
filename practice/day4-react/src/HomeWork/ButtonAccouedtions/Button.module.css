@@ -1,0 +1,50 @@
+/* --- layout --- */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+
+.accWrapper {
+  border: 1px solid transparent; 
+}
+
+.accItem + .accItem {
+  margin-top: 12px;
+}
+
+.accBtn {
+  width: 100%;
+  padding: 22px 12px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  color: #606060;
+  background: #f4f4f4;
+  transition: background 0.25s;
+}
+
+.accBtn.isOpen {
+  background: #65b176;
+  color: #fff;
+}
+
+.accContent {
+  padding: 32px 24px;
+  background: #fff;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+}

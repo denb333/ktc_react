@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+            background: #96c7e0;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .error {
+            border-color: red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+
+        .gender-group {
+            display: flex;
+            justify-content: space-between;
+            /* chia đều chiều ngang */
+            gap: 12px;
+            /* khoảng cách giữa các ô */
+        }
+
+        .gender-group label {
+            flex: 1;
+            /* mỗi label chiếm phần bằng nhau */
+            display: flex;
+            align-items: center;
+            /* căn dọc giữa radio + text */
+            gap: 6px;
+            /* khoảng cách radio–text */
+            padding: 6px 6px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            /* tuỳ chọn: khung nhẹ để thấy ranh giới */
+            border-radius: 4px;
+            justify-content: center;
+            /* căn giữa ngang nội dung */
+        }
+
+        .gender-group input {
+            accent-color: #007bff;
+
+            /* tô màu nút radio (trình duyệt hỗ trợ) */
+        }
+    </style>
+</head>
+
+<body>
+    <form id="registrationForm" novalidate>
+        <h2>Đăng ký người dùng</h2>
+
+        <label>Full Name</label>
+        <input type="text" id="fullName" required />
+        <div class="error-message" id="error-fullName"></div>
+
+        <label>Email</label>
+        <input type="email" id="email" required />
+        <div class="error-message" id="error-email"></div>
+
+        <label>Password</label>
+        <input type="password" id="password" required />
+        <div class="error-message" id="error-password"></div>
+
+        <label>Confirm Password</label>
+        <input type="password" id="confirmPassword" required />
+        <div class="error-message" id="error-confirmPassword"></div>
+
+        <label>Phone Number</label>
+        <input type="tel" id="phone" required />
+        <div class="error-message" id="error-phone"></div>
+
+        <label>Gender</label>
+        <div class="gender-group">
+            <label>
+                <input type="radio" name="gender" value="Male" /> Male
+            </label>
+            <label>
+                <input type="radio" name="gender" value="Female" /> Female
+            </label>
+            <label>
+                <input type="radio" name="gender" value="Other" /> Other
+            </label>
+        </div>
+        <div class="error-message" id="error-gender"></div>
+
+        <label>Date of Birth</label>
+        <input type="date" id="dob" required />
+        <div class="error-message" id="error-dob"></div>
+
+        <label>Country</label>
+        <select id="country" required>
+            <option value="">-- Select Country --</option>
+            <option>Vietnam</option>
+            <option>USA</option>
+            <option>UK</option>
+        </select>
+        <div class="error-message" id="error-country"></div>
+
+        <label>Hobbies</label>
+        <input type="checkbox" name="hobbies" value="Reading" /> Reading
+        <input type="checkbox" name="hobbies" value="Sports" /> Sports
+        <input type="checkbox" name="hobbies" value="Music" /> Music
+        <div class="error-message" id="error-hobbies"></div>
+
+        <label>Profile Picture (optional)</label>
+        <input type="file" id="profilePic" accept=".jpg,.jpeg,.png" />
+
+        <label>About You</label>
+        <textarea id="bio" maxlength="300"></textarea>
+
+        <button type="submit">Register</button>
+    </form>
+    <script>
+        const form = document.getElementById("registrationForm");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let isValid = true;
+
+            // Helper function
+            const showError = (id, message) => {
+                document.getElementById(id).textContent = message;
+                isValid = false;
+            };
+
+            const clearErrors = () => {
+                document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
+                document.querySelectorAll("input, select").forEach(el => el.classList.remove("error"));
+            };
+
+            clearErrors();
+
+            // Full Name
+            const fullName = document.getElementById("fullName");
+            if (fullName.value.trim().length < 3) {
+                showError("error-fullName", "Full Name must be at least 3 characters");
+                fullName.classList.add("error");
+            }
+
+            // Email
+            const email = document.getElementById("email");
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                showError("error-email", "Email format is invalid");
+                email.classList.add("error");
+            }
+
+            // Password
+            const password = document.getElementById("password");
+            if (password.value.length < 8 || !/\d/.test(password.value) || !/[a-zA-Z]/.test(password.value)) {
+                showError("error-password", "Password must be at least 8 characters with letters and numbers");
+                password.classList.add("error");
+            }
+
+            // Confirm Password
+            const confirmPassword = document.getElementById("confirmPassword");
+            if (confirmPassword.value !== password.value) {
+                showError("error-confirmPassword", "Passwords do not match");
+                confirmPassword.classList.add("error");
+            }
+
+            // Phone Number
+            const phone = document.getElementById("phone");
+            if (!/^\d{10,}$/.test(phone.value)) {
+                showError("error-phone", "Phone must be digits only and at least 10 digits");
+                phone.classList.add("error");
+            }
+
+            // Gender
+            const genderSelected = [...document.getElementsByName("gender")].some(g => g.checked);
+            if (!genderSelected) {
+                showError("error-gender", "Please select your gender");
+            }
+
+            // Date of Birth
+            const dob = document.getElementById("dob");
+            const age = new Date().getFullYear() - new Date(dob.value).getFullYear();
+            if (!dob.value || age < 18) {
+                showError("error-dob", "You must be at least 18 years old");
+                dob.classList.add("error");
+            }
+
+            // Country
+            const country = document.getElementById("country");
+            if (!country.value) {
+                showError("error-country", "Please select your country");
+                country.classList.add("error");
+            }
+
+            // Hobbies
+            const hobbiesChecked = [...document.getElementsByName("hobbies")].some(h => h.checked);
+            if (!hobbiesChecked) {
+                showError("error-hobbies", "Please select at least one hobby");
+            }
+
+            // Final submission
+            if (isValid) {
+                alert("Form submitted successfully!");
+                form.reset();
+            }
+        });
+    </script>
+</body>
+
+</html>

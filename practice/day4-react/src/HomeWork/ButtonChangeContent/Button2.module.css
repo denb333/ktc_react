@@ -1,0 +1,49 @@
+.wrapper {
+  max-width: 720px;
+  margin: 40px auto;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+}
+
+.item {
+  flex: 1;
+  padding: 16px 0;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+  position: relative;
+}
+
+.active {
+  color: #4caf79; 
+  
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  width: 70%;
+  height: 3px;
+  background-color: #4caf79;
+  border-radius: 2px;
+}
+ 
+.content {
+  padding: 32px 24px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}

@@ -1,0 +1,105 @@
+.ratio-wrapper {
+    /* width: 100%;
+    max-width: 1000px; */
+    margin: auto;
+    max-width: 1500px; 
+    /* display: flex; */
+}
+
+.row-item{
+    margin: 50px;
+}
+
+/* Mỗi dòng: title cố định 50px, phần còn lại 100% */
+.row-item {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Cố định row-title 50x50px, cùng màu với phần trăm */
+.row-title {
+    
+    width: 200px;
+    /* height: 100px; */
+    color: rgb(20, 16, 16);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 20px;
+    font-size: 0.75rem;
+    color: white;
+    flex-shrink: 0;
+    border: 2px solid gray;
+    font-size: 20px;
+}
+
+/* Phần còn lại là thanh màu */
+.row-percent {
+    flex: 1;
+    position: relative;
+    background: #ffffff;
+    font-size: 20px;
+    height: 100px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Tô màu bên trong row-percent theo % */
+.row-percent::after {
+    content: "";
+    position: absolute;
+    inset:0 0 0 0; 
+    left: 0;
+    top: 0;
+    height: 100%;
+    width:0;
+    background: currentColor;
+    animation: fillBar 1.2s ease forwards;
+    z-index: 0;
+}
+
+/* Hiển thị số % nằm trên phần màu */
+.row-percent::before {
+    content: attr(data-label) "%";
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+/* Màu chủ đề dùng currentColor */
+.row-item.danger  { color: #dc3545; }
+.row-item.info    { color: #17a2b8; }
+.row-item.success { color: #28a745; }
+.row-item.warning { color: #ffc107; }
+.row-item.purple  { color: #b76edb; }
+.row-item.pink    { color: #f47be6; }
+.row-item.blue    { color: #5d95d9; }
+
+.tile20  { background-color: #a72330; }
+.tile50    { background-color: #128192; }
+.tile70 { background-color: #1f8336; }
+.tile30 { background-color: #d4a006;  }
+.tile45  { background-color: #945bb0; }
+.tile80   { background-color: #c865bd; }
+.tile37    { background-color: #507eb8; } 
+
+
+/* Tỷ lệ phần trăm */
+.fill-20 { --percent: 20%; }
+.fill-30 { --percent: 30%; }
+.fill-37 { --percent: 37%; }
+.fill-45 { --percent: 45%; }
+.fill-50 { --percent: 50%; }
+.fill-70 { --percent: 70%; }
+.fill-80 { --percent: 80%; }
+
+@keyframes fillBar {
+    from { width: 0; }
+    to   { width: var(--percent); }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #itemInput {
+            width: 200px;
+            height: 100px;
+            font-size: 30px;
+        }
+
+
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #itemList {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <input type="text" id="itemInput" placeholder="Nhập mục..." /> -->
+
+    <ul id="itemList">
+        <li>sach <button class="changeBtn">Delete</button></li>
+        <li>vo <button class="changeBtn">Delete</button></li>
+        <li>giay dep <button class="changeBtn">Delete</button></li>
+        <li>tui xach <button class="changeBtn">Delete</button></li>
+        <li>balo <button class="changeBtn">Delete</button></li>
+    </ul>
+    <script>
+
+        // const item = document.getElementById("itemInput");
+        const list = document.getElementById("itemList");
+        list.addEventListener("click", (e) => {
+            if (e.target.classList.contains("changeBtn")) {
+                e.target.parentElement.remove(); // xoá <li>
+            } // Xóa thẻ <li>
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #itemInput {
+            width: 200px;
+            height: 100px;
+           font-size: 30px;
+        }
+
+
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #itemList {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="itemInput" placeholder="Nhập mục..." />
+    <button id="changeBtn">Append</button>
+    <ul id="itemList"></ul>
+    <script>
+        const btn = document.getElementById("changeBtn");
+        const item = document.getElementById("itemInput");
+        const list = document.getElementById("itemList");
+        function addItem() {
+            const text = item.value.trim();
+            if (!text) return; // bỏ qua khi ô trống
+            const li = document.createElement("li");
+            li.textContent = text;
+            list.appendChild(li);
+            item.value = ""; 
+            item.focus();
+        }
+        btn.addEventListener("click", addItem);
+        item.addEventListener("keydown", e => {    // Enter cũng thêm
+            if (e.key === "Enter") addItem();
+        });
+
+    </script>
+</body>
+
+</html>

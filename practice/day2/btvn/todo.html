@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <span id="clock">--:--:--</span>
+            <span id="greeting"></span>
+        </div>
+        <button id="theme-toggle" aria-label="Chuyển giao diện">🌙</button>
+    </header>
+
+    <main class="container">
+        <!-- To‑Do Card -->
+        <section class="card" id="todo-card">
+            <h2>Việc cần làm</h2>
+            <div id="todo-input-wrap">
+                <input id="todo-input" type="text" placeholder="Thêm công việc..." autocomplete="off" />
+                <button class="primary" id="add-todo">Thêm</button>
+            </div>
+            <span id="todo-error"></span>
+            <ul id="todo-list"></ul>
+            <div id="filters">
+                <button data-filter="all" class="active">Tất cả</button>
+                <button data-filter="completed">Hoàn thành</button>
+                <button data-filter="incomplete">Chưa làm</button>
+            </div>
+        </section>
+
+        <!-- Notes Card -->
+        <section class="card" id="notes-card">
+            <h2>Ghi chú nhanh</h2>
+            <div id="note-input-wrap">
+                <input id="note-input" type="text" placeholder="Thêm ghi chú..." autocomplete="off" />
+                <button class="primary" id="add-note">Thêm</button>
+            </div>
+            <span id="note-error"></span>
+            <div id="notes-container"></div>
+        </section>
+    </main>
+    <script src="service.js"></script>
+</body>
+
+</html>

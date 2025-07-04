@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box {
+      width: 200px;
+      height: 100px;
+      background-color: lightgray;
+      margin: 20px 0;
+      transition: background-color 0.3s;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button id="changeBtn">Click me</button>
+<script>
+      const btn = document.getElementById("changeBtn");
+      const box = document.getElementsByClassName("box")[0];
+      btn.addEventListener("click", () =>{
+      box.classList.toggle("highlight");
+      });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: Arial, sans-serif;
+  
+}
+
+.label {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* ===== Nút chung ===== */
+.btn {
+  position: relative;
+  padding: 4px 12px;
+  border: 2px solid #c4c4c4;
+  background: #fff;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+ border-color: #ff6a00; 
+  color: #ff6a00;
+}
+
+/* ===== Trạng thái đã chọn ===== */
+.active {
+  border-color: #ff6a00;   
+  color: #ff6a00;
+}
+
+
+.active::after {
+  content: '✔';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(30%, 30%) scale(0.7);
+  color: #fff;
+}
+
+.active::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0; 
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 16px 16px;        
+  border-color: transparent transparent #ff6a00 transparent;
+}

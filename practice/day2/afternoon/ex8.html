@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hoverBox {
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+            text-align: center;
+            line-height: 100px;
+            transition: background-color 0.3s;
+        }
+
+        /* .hoverBox:hover {
+            background-color: lightblue;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="hoverBox">Di chuột vào tôi!</div>
+    <script>
+         const box = document.querySelector(".hoverBox");
+         box.addEventListener("mouseenter", ()=>{
+            box.style.backgroundColor = 'lightblue';
+         });
+         box.addEventListener("mouseleave", ()=>{
+            box.style.backgroundColor = 'lightgray';
+         });
+    </script>
+</body>
+
+</html>

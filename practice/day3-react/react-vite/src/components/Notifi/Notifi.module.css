@@ -1,0 +1,221 @@
+
+.card {
+  width: 250px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px 18px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.06);
+  font-family: system-ui, sans-serif;
+  margin: 20px auto;
+}
+body{
+    background-color: #667083;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: #d50000;
+}
+
+.menu {
+  color: #000;
+}
+
+.body {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.flag {
+  font-size: 18px;
+}
+
+.score {
+  padding: 4px 14px;
+  background: #f2f3f5;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* 2 */
+.cardClub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;                 /* điều chỉnh theo ý bạn */
+  padding: 18px 22px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+  font-family: system-ui, sans-serif;
+  margin: 20px auto;
+}
+
+.clubLogo {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clubName {
+  flex: 1;
+  margin-left: 14px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* componet3 */
+.userCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  padding: 18px 22px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+  font-family: system-ui, sans-serif;
+  margin: 20px auto;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.avatar img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3px;
+
+}
+
+
+.userName {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 4px;
+  margin-left: 7px;
+}
+
+.userCard .cardrow {
+  width: 180px;
+  /* flex-direction: row; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+}
+.cardrow .icon {
+  cursor: pointer;
+  color: #333;
+  /* margin-right: -10px; */
+}
+.cardrow span{
+    margin-right: 0px;
+}
+.card svg {
+  color: #1877f2; 
+}
+
+
+/* Component4 */
+
+.serviceCard {
+  width: 240px;
+  padding: 24px 28px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0 0 0 / 0.05);
+  font-family: system-ui, sans-serif;
+  margin: 20px auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+}
+
+.tag {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+}
+
+.menu {
+  color: #000;
+}
+
+.title {
+  margin: 18px 0 4px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0 0 22px;
+  color: #7a7a7a;
+  font-size: 14px;
+}
+
+.progressWrapper {
+  position: relative;
+  height: 6px;
+  background: #eef1f3;
+  border-radius: 4px;
+  width: 83%;
+}
+
+.progressBar {
+  width: 100px;
+  position: absolute;
+  height: 100%;
+  background: #7bc179;   /* màu xanh progress */
+  border-radius: 4px;
+  /* margin: 0 5px; */
+}
+
+.percent {
+  position: absolute;
+  right: -46px;
+  top: -10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+
+
