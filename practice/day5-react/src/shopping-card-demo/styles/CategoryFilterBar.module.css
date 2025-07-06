@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+.tag {
+  border: 1px solid #237B54;
+  background: #fff;
+  color: #237B54;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.tag:hover {
+  background: #237B54;
+  color: #fff;
+}

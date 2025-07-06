@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 24px;
+  background: #fff;
+  border-bottom: 1px solid #ececec;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.menuBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #d0d0d0;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.searchInput {
+  flex: 1;
+  border: 1px solid #d0d0d0;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
