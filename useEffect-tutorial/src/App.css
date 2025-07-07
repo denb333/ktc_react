@@ -1,0 +1,144 @@
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app h1 {
+  color: #646cff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.navigation {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navigation button {
+  padding: 10px 15px;
+  border: 2px solid #646cff;
+  background: transparent;
+  color: #646cff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.navigation button:hover {
+  background: #646cff;
+  color: white;
+}
+
+.navigation button.active {
+  background: #646cff;
+  color: white;
+}
+
+.example-container {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #333;
+}
+
+.example-container h2 {
+  color: #646cff;
+  margin-bottom: 20px;
+}
+
+.example-container p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.code-block {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px 0;
+  border-left: 4px solid #646cff;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  overflow-x: auto;
+}
+
+.demo-section {
+  margin: 20px 0;
+  padding: 20px;
+  background: #2a2a2a;
+  border-radius: 8px;
+  border: 1px solid #444;
+}
+
+.demo-section h3 {
+  color: #888;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.demo-section button {
+  margin: 5px;
+  padding: 8px 16px;
+  background: #646cff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.demo-section button:hover {
+  background: #535bf2;
+}
+
+.demo-section input {
+  padding: 8px 12px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #1a1a1a;
+  color: white;
+  margin: 5px;
+}
+
+.demo-section input:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+.log {
+  background: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.log-item {
+  margin: 2px 0;
+  padding: 2px 0;
+}
+
+.log-item.info {
+  color: #646cff;
+}
+
+.log-item.warning {
+  color: #ffa500;
+}
+
+.log-item.error {
+  color: #ff6b6b;
+}
+
+.log-item.success {
+  color: #51cf66;
+} 

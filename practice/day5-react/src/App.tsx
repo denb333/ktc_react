@@ -63,8 +63,10 @@ function App() {
           <h2 style={{ margin: '24px 0 12px' }}>Thực phẩm khô</h2>
           <CategoryFilterBar />
           <ProductGrid />
+          
         </main>
       </CartProvider>
+      
     </>
   )
 }
