@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useCart } from '../context/CardContext';
 import CartDropdown from './CartDropdown';
 import styles from '../styles/CardIcon.module.css';
@@ -6,6 +6,7 @@ import styles from '../styles/CardIcon.module.css';
 const CartIcon: React.FC = () => {
   const { totalItems } = useCart();
   const [open, setOpen] = useState(false);
+  
 
   return (
     <div className={styles.wrapper}>
