@@ -6,9 +6,7 @@ export default function Header() {
             <input type="text" className={styles.search} placeholder="Search..."></input>
             <div className={styles.right}>
                 <Bell size={24} />
-                <div className={styles.avt}>
-                   
-    
+                <div className={styles.avt}> 
                 </div>
                 <span>Emma Kwan</span>
             </div>

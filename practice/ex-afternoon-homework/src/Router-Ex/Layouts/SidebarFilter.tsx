@@ -21,10 +21,10 @@ export default function SidebarFilter({onSelected, selectedId}: Props) {
           const data: Category[] = await res.json();
           setCategories(data);
         } finally {
-          setLoading(false);onSelected
+          setLoading(false);
         }
       })();
-    }, []);
+    }, [onSelected]);
   
     return(
         <aside className="w-full md:w-56 lg:w-64 shrink-0 pr-4 border-r ml-3">

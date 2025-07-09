@@ -51,7 +51,7 @@ export default function ProductPage() {
     return (
         <div className="flex flex-col lg:flex-row gap-6">
             {/* Sidebar */}
-            <SidebarFilter selectedId={selectedCat} onSelected={(id: any) => { setPage(1); setSelectedCat(id); }} />
+            <SidebarFilter selectedId={selectedCat} onSelected={(id: number | null) => { setPage(1); setSelectedCat(id); }} />
 
             <div className="flex-1">
                 
@@ -60,7 +60,7 @@ export default function ProductPage() {
                 <Pagination
                     current={page}
                     totalPages={totalPages}
-                    onPageChange={(p: any) => setPage(p)}
+                    onPageChange={(p: number) => setPage(p)}
                 />
             </div>
         </div>

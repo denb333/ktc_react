@@ -1,0 +1,88 @@
+  body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+            background: #96c7e0;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .error {
+            border-color: red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+
+        .gender-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* chia đều chiều ngang */
+            gap: 12px;
+            /* khoảng cách giữa các ô */
+        }
+        .hobby-checkbox{
+            display:  flex;
+            align-items: center;
+            justify-content: start;
+        }
+        .hobby-checkbox input{
+           display: flex;
+           align-items: center;
+           justify-content: end;
+           font-size: 50px;
+        }
+
+        .gender-group label {
+            flex: 1;
+            /* mỗi label chiếm phần bằng nhau */
+            display: flex;
+            align-items: center;
+            /* căn dọc giữa radio + text */
+            gap: 6px;
+            /* khoảng cách radio–text */
+            padding: 6px 6px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            /* tuỳ chọn: khung nhẹ để thấy ranh giới */
+            border-radius: 4px;
+            justify-content: center;
+            /* căn giữa ngang nội dung */
+        }
+
+        .gender-group input {
+            accent-color: #007bff;
+
+            /* tô màu nút radio (trình duyệt hỗ trợ) */
+        }

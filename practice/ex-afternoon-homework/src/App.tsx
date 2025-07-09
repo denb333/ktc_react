@@ -1,22 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router'
-import Home from './components/pages/Home'
-import About from './components/pages/About'
-import MainLayout from './components/layouts/MainLayout'
-import DashboardLayout from './components/layouts/DashboardLayout'
-import Overview from './components/pages/dashboard.tsx/Overview'
-import Reports from './components/pages/dashboard.tsx/Report'
-import Settings from './components/pages/dashboard.tsx/Setting'
-// import Header from './Router-Ex/Layouts/Header'
-import HomePage from './Router-Ex/Pages/HomePage'
-import BlogPage from './Router-Ex/Pages/BlogPage'
-import CategoryPage from './Router-Ex/Pages/CategoryPage'
-import ProductPage from './Router-Ex/Pages/ProductPage'
-import LoginPage from './Router-Ex/Pages/LoginPage'
-import CustomerPage from './Router-Ex/Pages/Customer'
+import { Routes, Route } from 'react-router-dom'
 import SideBar from './homework/components/SideBar/SideBar'
 import Header from './homework/components/Header/Header'
 import PatientsPage from './homework/pages/PatientPage'
@@ -27,15 +10,7 @@ import DoctorPage from './homework/pages/DoctorPage'
 import HistoryPage from './homework/pages/HistoryPage'
 import SettingPage from './homework/pages/SettingPage'
 
-
-
-
-
-
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       {/* <BrowserRouter>
@@ -101,7 +76,6 @@ function App() {
           </div>
         </div>
       </div>
-
     </>
   )
 }

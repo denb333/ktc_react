@@ -7,7 +7,7 @@ export default function Pagination({ current, totalPages, onPageChange }: Props)
     if (totalPages <= 1) return null;
     return (
         <div className="flex gap-1 mt-6">
-            {Array.from({ length: totalPages }).map((_, idx:any) => {
+            {Array.from({ length: totalPages }).map((_, idx: number) => {
                 const page = idx + 1;
                 return (
                     <button

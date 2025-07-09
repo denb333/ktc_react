@@ -1,0 +1,161 @@
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #131313;
+    min-height: 100vh;
+    font-family: system-ui, sans-serif;
+    color: #fff;
+  }
+  .error{
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .backBtn {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s;
+  }
+  
+  .backBtn:hover {
+    color: #28a06d;
+  }
+  
+  .hero {
+    background-image: url("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80");
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+  }
+  
+  .formWrapper {
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: -60px;
+    padding: 24px 20px 32px;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+  }
+  
+  .title {
+    margin-bottom: 24px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  
+  .profileBox {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+  }
+  
+  .profileText {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profileName {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  
+  .profileEmail {
+    font-size: 13px;
+    color: #ccc;
+  }
+  
+  .passwordGroup {
+    position: relative;
+    margin-bottom: 16px;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid transparent;
+    transition: border-color 0.25s, box-shadow 0.25s;
+  }
+  
+  .input::placeholder {
+    color: #d5d5d5;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: #28a06d;
+    box-shadow: 0 0 0 2px rgba(40, 160, 109, 0.4);
+  }
+  
+  .togglePwd {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #28a06d;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  
+  .primaryBtn {
+    width: 100%;
+    padding: 12px 14px;
+    background: #28a06d;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 16px;
+    transition: background 0.25s;
+  }
+  
+  .primaryBtn:hover {
+    background: #1e8157;
+  }
+  
+  .links {
+    text-align: center;
+    font-size: 13px;
+  }
+  
+  .links a {
+    color: #28a06d;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
