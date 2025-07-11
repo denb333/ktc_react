@@ -27,12 +27,7 @@ export default function OurTaskPage() {
     // Logic to handle task edit
     navigate(`/update-task/${taskId}`);
   };
-  const handleOnSearch = (filters: { status?: string; priority?: string }) => {
-    // Logic to filter tasks based on status and priority
-    console.log('Filters applied:', filters);
-    // You can implement the filtering logic here or pass it to a service function
-    setFilters(filters);
-  };
+ 
 
   const filteredTasks = tasks.filter((task: Task) => {
     let matches = true;
@@ -47,6 +42,12 @@ export default function OurTaskPage() {
 
     return matches;
   });
+   const handleOnSearch = (filters: { status?: string; priority?: string }) => {
+    // Logic to filter tasks based on status and priority
+    console.log('Filters applied:', filters);
+    // You can implement the filtering logic here or pass it to a service function
+    setFilters(filters);
+  };
   const handleDelete = async (id: number) => {
     try {
       await deleteTask(id);
@@ -57,20 +58,15 @@ export default function OurTaskPage() {
     }
   }
   return (
-    <div className="pt-6 px-4 w-full relative">
-      <h2 className="text-2xl font-semibold mb-4 text-center text-gray-800 fixed top-20 left-0 right-0">
+    <div className="pt-6 px-4 w-full fixed top-2 left-0 right-0">
+      <h2 className="text-2xl font-semibold mb-4 text-center text-gray-800 ">
         📋 Danh sách công việc
       </h2>
 
       {/* Phần nút và form nằm cùng hàng */}
-      <div className="mt-28 px-4 flex flex-row items-center justify-between space-x-20 fixed top-20 ">
-        <button
-          className="bg-green-500 text-white px-4 py-2 rounded-md h-12 min-w-[120px]"
-          onClick={() => navigate('/create-task')}
-        >
-          Create Task
-        </button>
-        <div className="flex-grow">
+      <div className="mt-2 px-4   items-center">
+        
+        <div className="flex-grow flex justify-end">
           <SearchTasks onSearch={handleOnSearch} />
         </div>
       </div>

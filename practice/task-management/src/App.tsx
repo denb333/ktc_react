@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import Index from './coponents'
+import Index from '.'
 
 function App() {
   return (

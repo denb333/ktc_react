@@ -21,8 +21,8 @@ export default function MyTaskPage() {
   }, [user]);
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-4 text-center text-gray-800 fixed top-20 left-0 right-0 ">
+    <div className="p-6 fixed top-20 left-0 right-0">
+      <h2 className="text-2xl font-semibold mb-4 text-center text-gray-800">
         📋 Danh sách công việc của bạn
       </h2>
 

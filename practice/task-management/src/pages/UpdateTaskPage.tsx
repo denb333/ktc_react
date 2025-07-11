@@ -88,7 +88,7 @@ export default function UpdateTaskPage() {
     };
    
     return (
-        <div className="max-w-4xl mx-auto mt-20 px-6">
+        <div className="max-w-4xl mx-auto mt-20 px-6 fixed top-2 left-0 right-0">
             <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">📝 Update Task</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-lg rounded-xl p-8 space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">

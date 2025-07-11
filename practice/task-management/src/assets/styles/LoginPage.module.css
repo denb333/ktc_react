@@ -11,12 +11,29 @@ span{
    
 
 }
-body {
+/* body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background: #23242a;
+} */
+body{
+  position: relative;
+}
+.container{
+  /* margin: 0 auto; */
+  
+
+  /* height: 100vh; */
+ /* position: absolute; */
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+  /* min-height: 100vh; */
+
 }
 
 .box {
