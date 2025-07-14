@@ -20,7 +20,7 @@ export const UserContext = createContext<{
   {
     name: "Jane Doe",   
     email: "jane.doe@example.com",
-    age: 26,
+    age: null,
     id: Date.now(),
   }
  ]

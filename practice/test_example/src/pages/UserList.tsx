@@ -8,7 +8,7 @@ export default function UserList() {
         return <p className="text-center mt-4">No users available.</p>;
       }
       return (
-        <div className="max-w-2xl mx-auto mt-8 px-4">
+        <div className="max-w-2xl mx-auto mt-8 px-4 mb-10">
           <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">
             User List
           </h2>
