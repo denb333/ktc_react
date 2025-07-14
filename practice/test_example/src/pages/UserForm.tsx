@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import type { SubmitHandler } from 'react-hook-form';
 import { useContext } from 'react';
 import { UserContext } from '../Context/context';
+import { useNavigate } from 'react-router';
 
 // interface IFormInput {
 //     name: string;
@@ -36,6 +37,7 @@ const userSchema = yup.object().shape({
 
 export default function UserForm() {
     const { addUser } = useContext(UserContext);
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -48,6 +50,7 @@ export default function UserForm() {
     const onSubmit: SubmitHandler<any> = (data) => {
         console.log("Submit data successfully: ", data);
         addUser(data);
+        navigate("/users");
 
         reset();
     };

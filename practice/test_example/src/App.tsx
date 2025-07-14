@@ -18,7 +18,8 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<UserList />} />
-            <Route path="/users" element={<UserForm />} />
+            <Route path="/users" element={<UserList />} />
+            <Route path="/users/form" element={<UserForm />} />
             <Route path="/users/:id" element={<UserDetail />} />
           </Routes>
         </BrowserRouter>

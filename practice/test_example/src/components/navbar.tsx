@@ -10,7 +10,7 @@ export default function Navbar() {
                 </Link>
                 <div className="flex space-x-4 mr-10">
                     <NavLink
-                        to="/"
+                        to="/users"
                         className={({ isActive }) =>
                             isActive ? "text-yellow-300" : "hover:text-yellow-300"
                         }
@@ -18,7 +18,7 @@ export default function Navbar() {
                         Home
                     </NavLink>
                     <NavLink
-                        to="/users"
+                        to="/users/form"
                         className={({ isActive }) =>
                             isActive ? "text-yellow-300" : "hover:text-yellow-300"
                         }
