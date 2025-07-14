@@ -88,139 +88,71 @@ export default function UpdateTaskPage() {
     };
    
     return (
-        <div className="max-w-4xl mx-auto mt-20 px-6 fixed top-2 left-0 right-0">
-            <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">📝 Update Task</h2>
-            <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-lg rounded-xl p-8 space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
-                    {/* Title */}
-                    <div>
-                        <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
-                            Tiêu đề
-                        </label>
-                        <input
-                            {...register('title')}
-                            type="text"
-                            id="title"
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400"
-                            placeholder="Nhập tiêu đề"
-                        />
-                        {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title.message}</p>}
-                    </div>
-
-                    {/* Description */}
-                    <div>
-                        <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
-                            Mô tả
-                        </label>
-                        <input
-                            {...register('description')}
-                            type="text"
-                            id="description"
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400"
-                            placeholder="Nhập mô tả công việc"
-                        />
-                        {errors.description && <p className="text-red-500 text-sm mt-1">{errors.description.message}</p>}
-                    </div>
-
-                    {/* Start Date */}
-                    <div>
-                        <label htmlFor="start_date" className="block text-sm font-medium text-gray-700 mb-1">
-                            Ngày bắt đầu
-                        </label>
-                        <input
-                            {...register('start_date')}
-                            type="date"
-                            id="start_date"
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400"
-                        />
-                        {errors.start_date && <p className="text-red-500 text-sm mt-1">{errors.start_date.message}</p>}
-                    </div>
-
-                    {/* Due Date */}
-                    <div>
-                        <label htmlFor="due_date" className="block text-sm font-medium text-gray-700 mb-1">
-                            Hạn chót
-                        </label>
-                        <input
-                            {...register('due_date')}
-                            type="date"
-                            id="due_date"
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400"
-                        />
-                        {errors.due_date && <p className="text-red-500 text-sm mt-1">{errors.due_date.message}</p>}
-                    </div>
-
-                    {/* Assignee ID */}
-                    <div>
-                        <label htmlFor="assignee_id" className="block text-sm font-medium text-gray-700 mb-1">
-                            Người được giao (ID)
-                        </label>
-                        <input
-                            {...register('assignee_id', { valueAsNumber: true })}
-                            type="number"
-                            id="assignee_id"
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400"
-                            placeholder="Nhập ID người được giao"
-                        />
-                        {errors.assignee_id && <p className="text-red-500 text-sm mt-1">{errors.assignee_id.message}</p>}
-                    </div>
-
-                    {/* Status */}
-                    <div>
-                        <label htmlFor="status" className="block text-sm font-medium text-gray-700 mb-1">
-                            Trạng thái
-                        </label>
-                        <select
-                            {...register('status')}
-                            id="status"
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400"
-                        >
-                            <option value="to_do">To Do</option>
-                            <option value="in_progress">In Progress</option>
-                            <option value="done">Done</option>
-                        </select>
-                        {errors.status && <p className="text-red-500 text-sm mt-1">{errors.status.message}</p>}
-                    </div>
-
-                    {/* Priority */}
-                    <div>
-                        <label htmlFor="priority" className="block text-sm font-medium text-gray-700 mb-1">
-                            Mức độ ưu tiên
-                        </label>
-                        <select
-                            {...register('priority')}
-                            id="priority"
-                            className="w-full border border-gray-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400"
-                        >
-                            <option value="low">Low</option>
-                            <option value="medium">Medium</option>
-                            <option value="high">High</option>
-                        </select>
-                        {errors.priority && <p className="text-red-500 text-sm mt-1">{errors.priority.message}</p>}
-                    </div>
-                   
-                </div>
-                <div className='flex gap-4'>
-                
-                <button
-                    type="submit"
-                    className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition"
-                >
-                    ✅ Update Task
-                </button>
-                <button
-                    onClick={() => navigate('/ourtask')}
-                    className="w-full bg-gray-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-gray-700 transition"
-                >
-                    Cancel
-                </button>
-               
-                </div>
-
-                {/* Submit Button */}
-              
-            </form>
+        <form onSubmit={handleSubmit(onSubmit)} className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8 space-y-6 fixed top-20 left-0 right-0">
+        <h2 className="text-2xl font-bold text-center text-gray-800">📝 Tạo Công Việc Mới</h2>
+      
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Tiêu đề</label>
+            <input {...register('title')} className="w-full border rounded-lg p-2" placeholder="Nhập tiêu đề" />
+            {errors.title && <p className="text-red-500">{errors.title.message}</p>}
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Người được giao (ID)</label>
+            <input {...register('assignee_id', { valueAsNumber: true })} type="number" className="w-full border rounded-lg p-2" placeholder="Nhập ID người được giao" />
+            {errors.assignee_id && <p className="text-red-500">{errors.assignee_id.message}</p>}
+          </div>
+        
+      
+          <div className="md:col-span-2">
+            <label className="block text-sm font-medium text-gray-700">Mô tả</label>
+            <textarea {...register('description')} rows={4} className="w-full border rounded-lg p-2 resize-none" placeholder="Nhập mô tả công việc"></textarea>
+            {errors.description && <p className="text-red-500">{errors.description.message}</p>}
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Ngày bắt đầu</label>
+            <input {...register('start_date')} type="date" className="w-full border rounded-lg p-2" />
+            {errors.start_date && <p className="text-red-500">{errors.start_date.message}</p>}
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Hạn chót</label>
+            <input {...register('due_date')} type="date" className="w-full border rounded-lg p-2" />
+            {errors.due_date && <p className="text-red-500">{errors.due_date.message}</p>}
+          </div>
+      
+        
+      
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Trạng thái</label>
+            <select {...register('status')} className="w-full border rounded-lg p-2">
+              <option value="to_do">To Do</option>
+              <option value="in_progress">In Progress</option>
+              <option value="done">Done</option>
+            </select>
+            {errors.status && <p className="text-red-500">{errors.status.message}</p>}
+          </div>
+      
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Mức độ ưu tiên</label>
+            <select {...register('priority')} className="w-full border rounded-lg p-2">
+              <option value="low">Thấp</option>
+              <option value="medium">Trung bình</option>
+              <option value="high">Cao</option>
+            </select>
+            {errors.priority && <p className="text-red-500">{errors.priority.message}</p>}
+          </div>
         </div>
+      
+       <div className="flex flex-row justify-between space-x-4">
+       <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition">
+          ✅ Tạo công việc
+        </button>
+        <button type="button" onClick={() => navigate('/ourtask')} className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-semibold transition">
+          ❌ Hủy
+        </button>
+       </div>
+      </form>
+      
     );
 }
 

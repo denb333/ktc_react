@@ -27,7 +27,7 @@ export default function OurTaskPage() {
     // Logic to handle task edit
     navigate(`/update-task/${taskId}`);
   };
- 
+
 
   const filteredTasks = tasks.filter((task: Task) => {
     let matches = true;
@@ -42,12 +42,13 @@ export default function OurTaskPage() {
 
     return matches;
   });
-   const handleOnSearch = (filters: { status?: string; priority?: string }) => {
+  const handleOnSearch = (filters: { status?: string; priority?: string }) => {
     // Logic to filter tasks based on status and priority
     console.log('Filters applied:', filters);
     // You can implement the filtering logic here or pass it to a service function
     setFilters(filters);
   };
+
   const handleDelete = async (id: number) => {
     try {
       await deleteTask(id);
@@ -62,16 +63,10 @@ export default function OurTaskPage() {
       <h2 className="text-2xl font-semibold mb-4 text-center text-gray-800 ">
         📋 Danh sách công việc
       </h2>
-
-      {/* Phần nút và form nằm cùng hàng */}
-      <div className="mt-2 px-4   items-center">
-        
-        <div className="flex-grow flex justify-end">
-          <SearchTasks onSearch={handleOnSearch} />
-        </div>
+      <div className="flex-grow flex justify-end mb-4">
+        <SearchTasks onSearch={handleOnSearch} />
       </div>
 
-      {/* Table hiển thị bên dưới */}
       <div className=" overflow-x-auto rounded-lg shadow border border-gray-200">
         <table className="w-full divide-y divide-gray-200 bg-white">
           <thead className="bg-gray-100">
@@ -96,10 +91,10 @@ export default function OurTaskPage() {
                 <td className="px-4 py-2">
                   <span
                     className={`px-2 py-1 rounded-full text-xs font-semibold ${task.status === 'done'
-                        ? 'bg-green-100 text-green-700'
-                        : task.status === 'in_progress'
-                          ? 'bg-yellow-100 text-yellow-700'
-                          : 'bg-red-100 text-red-700'
+                      ? 'bg-green-100 text-green-700'
+                      : task.status === 'in_progress'
+                        ? 'bg-yellow-100 text-yellow-700'
+                        : 'bg-red-100 text-red-700'
                       }`}
                   >
                     {task.status}

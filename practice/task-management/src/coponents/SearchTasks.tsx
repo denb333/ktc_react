@@ -68,14 +68,18 @@ export default function SearchTasks({ onSearch }: Props) {
                 </select>
             </div>
 
-            <div className="self-end">
+            <div className="self-end flex flex-row space-x-4">
                 <button
                     type="submit"
                     className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-md shadow-sm transition"
                 >
                     Search
                 </button>
+                <button onClick={() => onSearch?.({ status: '', priority: '' })} className="bg-gray-600 hover:bg-gray-700 text-white font-medium px-4 py-2 rounded-md shadow-sm transition">
+                    Clear Filters
+                </button>
             </div>
+            
         </form>
     );
 }
