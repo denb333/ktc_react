@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { login } from '../services';
-// import type { User } from '../types/type';
+
 
 interface IFormInput {
     email: string;
