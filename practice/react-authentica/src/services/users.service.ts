@@ -6,20 +6,41 @@ export const getUsers = async () : Promise<User[]>=> {
   return result as unknown as User[];
 };
 
-export const getUserById = async (id: number): Promise<User[]> => {
+export const getUserById = async (id: number): Promise<User> => {
   const result = await apiClient.get(`/security/users/${id}`);
-  return result as unknown as User[];
+  return result as unknown as User;
 };
+
+// export const getRoleByUserId = async (): Promise<User[]> => {
+//   const result = await getUsers();
+//   console.log('🔍 User data1:', result);
+//   const userList = await Promise.all(
+//     result.map(async (user: any) => {
+//       const userDetails = await getUserById(user.id);
+//       console.log('🔍 User data2:', userDetails);
+//       return userDetails;
+//     })
+//   );
+//   return userList as unknown as User[];
+// };
 export const getRoleByUserId = async (): Promise<User[]> => {
   const result = await getUsers();
-  const userList = await Promise.all(
-    result.map(async (user: any) => {
+  const userList: User[] = [];
+
+  for (const user of result) {
+    try {
       const userDetails = await getUserById(user.id);
-      return userDetails;
-    })
-  );
-  return userList as unknown as User[];
+      if (userDetails) {
+        userList.push(userDetails);
+      }
+    } catch (err) {
+      console.warn(`⚠️ Lỗi lấy user ID ${user.id}:`, err);
+    }
+  }
+
+  return userList;
 };
+
 
 export const createUser = async (user: { username: string; password: string; fullName: string }) => {
   const result = await apiClient.post('/security/users', user);

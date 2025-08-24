@@ -39,7 +39,7 @@ export const getTaskByAssigneeId = async (id: number) => {
     return response.json();
 }
 
-export const createTask = async (task: Task) => {
+export const createTasks = async (task: Task) => {
     const response = await fetch(`${baseUrl}/workspaces/tasks`, {
       method: 'POST',
       headers: defaultHeaders,

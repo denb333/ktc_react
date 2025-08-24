@@ -18,10 +18,10 @@ export default function TasksManagementWithZustandAndSecurity() {
       });
       return hasAccess
         ? {
-            path: route.path,
-            element: route.element,
-            index: route.index,
-          }
+          path: route.path,
+          element: route.element,
+          index: route.index,
+        }
         : null;
     })
     .filter(Boolean); // Filter out null values
